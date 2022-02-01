@@ -1,5 +1,4 @@
 <?php
-
 require_once 'Vol.php';
 $vol = new Vol();
 $volp = $vol->getVol();
@@ -23,11 +22,11 @@ $volp = $vol->getVol();
 
     <tr>
         <th>ID</th>
-        <th>Date de depart</th>
+            <th>Date de depart</th>
         <th>Heure de depart</th>
         <th>Heure d'arrivée</th>
         <th>Pilote</th>
-        <th>Avion</th>
+            <th>Avion</th>
     </tr>
 
     <?php foreach ($volp as $value){

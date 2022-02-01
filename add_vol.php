@@ -11,13 +11,13 @@
 <form action="traitement.php" method="post">
     <p>
 
-        Date depart<br>
+        Date de depart<br>
         <input type="date" name="date_depart"><br><br>
 
-        Heure depart<br>
+        Heure de depart<br>
         <input type="time" name="heure_depart"><br><br>
 
-        Heure arrivée<br>
+        Heure d'arrivée<br>
         <input type="time" name="heure_arrivee"><br><br>
 
         Ref_pilote<br>
