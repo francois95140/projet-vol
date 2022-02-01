@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
@@ -21,11 +21,11 @@
         <input type="time" name="heure_arrivee"><br><br>
 
         Ref_pilote<br>
-        <select class="js-example-basic-single" name="state">
+        <select class="js-example-basic-single" name="ref_pilote">
             <option value="">--Choisissez un pilote--</option>
             <?php
             require_once 'Vol.php';
-            $vol = new Vol();
+            $vol = new Vol(array());
 
             $pilote = $vol->pilote();
 
@@ -33,10 +33,10 @@
               echo "<option value=".$value['id_pilote'].">".$value['nom']." ".$value['prenom']."</option>";
             }?>
         </select>
-        <br></dr><br></dr>
+        <br><br
 
-         <dr>Ref_avion<br>
-                <select class="js-example-basic-single" name="state">
+         <br>Ref_avion<br>
+                <select class="js-example-basic-single" name="ref_avion">
                     <option value="">--Choisissez un avion--</option>
                     <?php
 
@@ -45,10 +45,10 @@
                     foreach ($avion as $value){
                         echo "<option value=".$value['id_avion'].">".$value['nom']." ".$value['capacite']."</option>";
                     }?>
-                </select><dr>
-         </dr>
+                </select><br>
+         <br>
 
-             <dr><br> <dr></dr> <input type="submit" value="valider"><br/>
+             <br><input type="submit" value="valider"><br>
     </p>
 </form>
 
