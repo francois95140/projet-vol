@@ -133,4 +133,14 @@ class Vol{
         return $req;
     }
 
+    public function supprimer(){
+        $bdd = new PDO('mysql:host=localhost;dbname=fto_vol;charset=utf8', 'root', '');
+
+        $res = $bdd ->prepare('DELETE FROM vol WHERE ');
+    }
+
+    public function modif(){
+
+    }
+
 }
