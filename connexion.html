@@ -3,20 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <title>connexion</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+
 </head>
 <body>
-<form action="connecxion.php" method="post">
-    <p>
-        <br>Nom d'utilisateur <br/>
-        <input type="text" placeholder="  Nom d'utilisateur" name="login" required style="background-color:transparent" style="border:0px" />
-        <br/>
-        <br/>
-        Mot de passe <br/>
-        <input type="password" placeholder="  Mot de passe " name="wps" required style="background-color:transparent" style="border:0px" />
+<section class="page-section bg-primary text-white mb-0" id="connexion">
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">Connexion</h2>
+        <!-- formulaire Section Content-->
+        <div class="row" align="center">
 
-    </p>
+            <form action="connecxion.php" method="post">
+                <p>
+                    <br>Nom d'utilisateur <br/>
+                    <input type="text" placeholder="  Nom d'utilisateur" name="login" required style="background-color:transparent" style="border:0px" />
+                    <br/>
+                    <br/>
+                    Mot de passe <br/>
+                    <input type="password" placeholder="  Mot de passe " name="wps" required style="background-color:transparent" style="border:0px" />
 
-    <input type="submit" value="connexion" />
-</form>
+                </p>
+                <input type="submit" value="connexion" class="btn btn-xl btn-outline-light" style="background-color: transparent"/>
+            </form>
+
+            <div class="col-lg-4 ms-auto"><p class="lead"></p></div>
+            <div class="col-lg-4 me-auto"><p class="lead"></p></div>
+        </div>
+        <!-- About Section Button-->
+        <div class="text-center mt-4">
+            <a class="btn btn-xl btn-outline-light" href="inscription.html">
+                <i class="fas fa-download me-2"></i>
+                inscription
+            </a>
+        </div>
+    </div>
+</section>
+<br>
+
 </body>
 </html>
+</form>

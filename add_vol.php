@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1 >AJOUT DE VOL</h1>
-<form action="traitement.php" method="post">
+<form action="traitement.vol.php" method="post">
     <p>
 
         Date de depart<br>

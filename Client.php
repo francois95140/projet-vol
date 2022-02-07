@@ -9,14 +9,115 @@ class Client{
     private $numero;
     private $mot_de_passe;
 
-    public function setClient($nom,$prenom,$age,$email,$numero,$mot_de_passe){
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->age = $age;
-        $this->email = $email;
-        $this->numero = $numero;
-        $this->mot_de_passe = $mot_de_passe;
+    public function __construct(array $donnees){
+        $this->hydrate($donnees);
+    }
 
+    /**
+     * @return mixed
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param mixed $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param mixed $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * @param mixed $age
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNumero()
+    {
+        return $this->numero;
+    }
+
+    /**
+     * @param mixed $numero
+     */
+    public function setNumero($numero)
+    {
+        $this->numero = $numero;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMotDePasse()
+    {
+        return $this->mot_de_passe;
+    }
+
+    /**
+     * @param mixed $mot_de_passe
+     */
+    public function setMotDePasse($mot_de_passe)
+    {
+        $this->mot_de_passe = $mot_de_passe;
+    }
+
+
+    private function hydrate(array $donnees){
+        foreach ($donnees as $key => $value){
+            $method = 'set'.ucfirst($key);
+
+            if (method_exists($this, $method)) {
+                $this->$method($value);
+            }
+        }
     }
 
     public function inscription(){
@@ -36,21 +137,23 @@ class Client{
         if ($res) {
             echo 'un compte est deja existant à se nom ' . $this->nom . '' . $this->prenom . '<br>';
         } else {
-            $req = $bdd->prepare('INSERT INTO client(nom,prenom,age,email,numero,mot_de_passe) values(:nom,:prenom,:age,:email,:numero,:mot_de_passe)');
+            $req = $bdd->prepare('INSERT INTO client(nom,prenom,age,email,mot_de_passe,numero) values (:nom,:prenom,:age,:email,:mot_de_passe,:numero)');
 
             $req->execute(array(
                 'nom' => $this->nom,
                 'prenom' => $this->prenom,
                 'age' => $this->age,
                 'email' => $this->email,
-                'numero' => $this->numero,
                 'mot_de_passe' => $this->mot_de_passe,
+                'numero' => $this->numero,
             ));
+    var_dump($this);
+            $req->debugDumpParams();
 
             echo 'La personne a bien été inscrit !' . '<br>';
         }
 
-        echo '<form action="connexion.php" method="post">
+        echo '<form action="connexion.html" method="post">
       <p></p>
       <input type="submit" value="connectez vous" />
       </form>';

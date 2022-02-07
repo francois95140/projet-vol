@@ -1,6 +1,6 @@
 <?php
 require_once 'Vol.php';
-$vol = new Vol();
+$vol = new Vol(array());
 $volp = $vol->getVol();
 ?>
 
